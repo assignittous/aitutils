@@ -1,0 +1,2 @@
+# aitutils
+Simple utility library
