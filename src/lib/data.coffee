@@ -3,7 +3,7 @@
 
 fs = require('fs-extra')
 logger = require('knodeo-logger').Logger
-convert = require('../lib/convert').Convert
+#convert = require('../lib/convert').Convert
 nodePath = require 'path'
 pd = require('pretty-data').pd
 
