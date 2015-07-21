@@ -1,7 +1,7 @@
 # xml
 
 _ = require "lodash"
-array = require("./array").array
+array = require("../lib/array").array
 
 exports.xml = {
 

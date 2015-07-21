@@ -1,7 +1,7 @@
 # file.coffee
 
 fs = require "fs-extra"
-logger = require("./lib/logger").logger
+logger = require("../lib/logger").logger
 _ = require "lodash"
 
 
