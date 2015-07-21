@@ -1,6 +1,6 @@
 {
   "name": "aitutils",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -31,6 +31,7 @@
     "fs-extra": "^0.22.1",
     "knodeo-logger": "^0.1.1",
     "lodash": "^3.10.0",
-    "moment": "^2.10.3"
+    "moment": "^2.10.3",
+    "pretty-data": "^0.40.0"
   }
 }
