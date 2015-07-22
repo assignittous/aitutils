@@ -33,7 +33,7 @@ exports.data =
     fs.outputFileSync(path, data)
 
 
-    csvRowSanitize: (object, attributes)->
+  csvRowSanitize: (object, attributes)->
 
     if attributes?
       #console.log "select only"
