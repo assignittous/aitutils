@@ -2,6 +2,7 @@
 
 _ = require "lodash"
 array = require("../lib/array").array
+jade = require "jade"
 
 exports.xml = {
 
@@ -47,6 +48,16 @@ exports.xml = {
       console.log obj
 
     return output
+
+  # compile from jade
+  fromJadeFile: (jadepath)->
+    return jade.compileFile(jadepath, {pretty: true})
+
+  fromJade: (jadeMarkup)->
+    fs.writeFileSync(outputPath, compiled(locals))     
+    logger.info "Compiled #{sourcePath} to #{outputPath}"    
+
+
 }
 
 
