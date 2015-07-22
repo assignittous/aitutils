@@ -3,6 +3,7 @@
 fs = require "fs-extra"
 logger = require("../lib/logger").logger
 path = require "path"
+del = require "del"
 _ = require "lodash"
 
 exports.file = {
@@ -24,6 +25,8 @@ exports.file = {
   cleanName: (path)->
     #normalize
     #convert backslashes to forward slashes
+
+  delete: (path)->
 
 
   # validate that the file extension ends with the desired extension, if not, append
