@@ -72,7 +72,6 @@ exports.file = {
     fyle.walkSync directoryPath, callback
 
   
-
   delete: (filePath)->
     fs.removeSync filePath
 
