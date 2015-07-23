@@ -1,6 +1,6 @@
 # file.coffee
 
-# Synchronous file ops
+# Synchronous file ops and miscellaneous path tools
 
 fs = require "fs-extra"
 fyle = require "file" # needed for file walking
@@ -12,6 +12,8 @@ _ = require "lodash"
 
 exports.file = {
 
+  # ## Text File Ops
+
   # Open a text based file synchronously
   open: (file)->
     return fs.readFileSync file, { encoding: 'utf8' }
@@ -19,6 +21,33 @@ exports.file = {
   # save data to a path
   save: (file, data)->
     fs.writeFileSync file, data
+
+  # ## Synchronous File Ops
+
+  exists: (filePath)->
+    # this is because fs.existsSync is getting deprecated
+    try
+      # Query the entry
+      stats = fs.lstatSync(filePath)
+      # Is it a directory?
+      if stats.isDirectory()
+        # Yes it is
+        return false
+      else
+        return true
+    catch e
+      return false
+
+  isFolder: (filePath)
+    if @exists(filePath)
+      stats = fs.statSync(filePath)
+      if stats.isDirectory()
+        return true
+      else
+        return false
+    else
+      return false
+
 
   copy: (source, destination, clobber) ->
     options = { clobber: false }
@@ -42,36 +71,23 @@ exports.file = {
   traverse: (directoryPath, callback)->
     fyle.walkSync directoryPath, callback
 
-  # this is because fs.existsSync is getting deprecated
-  exists: (filePath)->
-    try
-      # Query the entry
-      stats = fs.lstatSync(filePath)
-      # Is it a directory?
-      if stats.isDirectory()
-        # Yes it is
-        return false
-      else
-        return true
-    catch e
-      return false
-
-  isFolder: (filePath)
-    if @exists(filePath)
-      stats = fs.statSync(filePath)
-      if stats.isDirectory()
-        return true
-      else
-        return false
-    else
-      return false
-
-  cleanPath: (filePath)->
-    return path.normalize(filePath)
+  
 
   delete: (filePath)->
     fs.removeSync filePath
 
+  setupFolderTree: (subfolders) ->
+    subfolders.each (subfolderPath)->
+      fs.mkdirsSync subfolderPath, (err)->
+        if err
+          logger.error "#{subfolderPath} could not be created."
+        else
+          logger.info "#{subfolderPath} created."    
+
+  # ## File Path Ops
+
+  cleanPath: (filePath)->
+    return path.normalize(filePath)
 
   # validate that the file extension ends with the desired extension, if not, append
   ensureExtension: (filePath, ext)->
@@ -82,12 +98,6 @@ exports.file = {
 
   
 
-  setupFolderTree: (subfolders) ->
-    subfolders.each (subfolderPath)->
-      fs.mkdirsSync subfolderPath, (err)->
-        if err
-          logger.error "#{subfolderPath} could not be created."
-        else
-          logger.info "#{subfolderPath} created."
+
 
 }
