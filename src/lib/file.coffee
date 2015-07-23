@@ -1,6 +1,8 @@
 # file.coffee
 
 fs = require "fs-extra"
+fyle = require "file"
+
 logger = require("../lib/logger").logger
 path = require "path"
 del = require "del"
@@ -22,11 +24,17 @@ exports.file = {
 
   rename: (source, destination) ->
 
+  traverse: (path, callback)->
+    fyle.walk path, callback
+
+
+
   cleanName: (path)->
     #normalize
     #convert backslashes to forward slashes
 
   delete: (path)->
+    del.sync path
 
 
   # validate that the file extension ends with the desired extension, if not, append
