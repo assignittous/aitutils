@@ -74,7 +74,7 @@ exports.file = {
 
 
   # validate that the file extension ends with the desired extension, if not, append
-  checkExtension: (filePath, ext)->
+  ensureExtension: (filePath, ext)->
     if _.endsWith(filePath, ext)
       return filePath
     else
