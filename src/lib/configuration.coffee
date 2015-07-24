@@ -1,7 +1,7 @@
 CSON = require('cson')
 cwd = process.env.PWD || process.cwd()
 
-exports.Configuration = 
+exports.configuration = 
   current: {}
 
   # Load config file
@@ -11,6 +11,9 @@ exports.Configuration =
 
   load: (path)->
     @current = CSON.parseCSONFile(path)
+
+  reset: ()->
+    @current = {}
 
   upgrade: (fn)->
     console.log "noop"
