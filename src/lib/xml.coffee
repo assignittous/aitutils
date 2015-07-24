@@ -54,8 +54,11 @@ exports.xml = {
     return output
 
   # compile from jade
-  fromJadeFile: (jadepath)->
-    return jade.renderFile(jadepath, {pretty: true})
+  fromJadeFile: (jadepath, locals)->
+    if !locals?
+      locals = {}
+    fn = jade.compileFile(jadepath, {pretty: true})
+    return fn(locals)
 
   fromJade: (jadeMarkup)->
     fs.writeFileSync(outputPath, compiled(locals))     
