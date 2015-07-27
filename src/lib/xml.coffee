@@ -60,9 +60,11 @@ exports.xml = {
     fn = jade.compileFile(jadepath, {pretty: true})
     return fn(locals)
 
-  fromJade: (jadeMarkup)->
-    fs.writeFileSync(outputPath, compiled(locals))     
-    logger.info "Compiled #{sourcePath} to #{outputPath}"    
+  fromJade: (jadeMarkup, locals)->
+    if !locals?
+      locals = {}
+    fn = jade.compile(jadepath, {pretty: true})    
+    return fn(locals) 
 
   toJadeFile: (jadepath)->
     logger.info "xmltojade"
