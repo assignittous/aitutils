@@ -72,7 +72,7 @@ exports.file = {
     fyle.walkSync directoryPath, callback
 
   
-  delete: (filePath)->
+  del: (filePath)->
     fs.removeSync filePath
 
   setupFolderTree: (subfolders) ->
