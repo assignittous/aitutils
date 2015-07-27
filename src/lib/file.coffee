@@ -38,7 +38,7 @@ exports.file = {
     catch e
       return false
 
-  isFolder: (filePath)
+  isFolder: (filePath)->
     if @exists(filePath)
       stats = fs.statSync(filePath)
       if stats.isDirectory()
