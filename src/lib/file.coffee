@@ -12,6 +12,19 @@ _ = require "lodash"
 
 exports.file = {
 
+
+  # ## File Path Ops
+
+  cleanPath: (filePath)->
+    return path.normalize(filePath)
+
+  # validate that the file extension ends with the desired extension, if not, append
+  ensureExtension: (filePath, ext)->
+    if _.endsWith(filePath, ext)
+      return filePath
+    else
+      return "#{filePath}#{ext}"
+
   # ## Text File Ops
 
   # Open a text based file synchronously
@@ -22,7 +35,13 @@ exports.file = {
   save: (file, data)->
     fs.writeFileSync file, data
 
-  # ## Synchronous File Ops
+  append: (file, data)->
+    fs.appendFileSync file, data
+
+
+  # Core ops  
+  del: (filePath)->
+    fs.removeSync filePath
 
   exists: (filePath)->
     # this is because fs.existsSync is getting deprecated
@@ -37,17 +56,6 @@ exports.file = {
         return true
     catch e
       return false
-
-  isFolder: (filePath)->
-    if @exists(filePath)
-      stats = fs.statSync(filePath)
-      if stats.isDirectory()
-        return true
-      else
-        return false
-    else
-      return false
-
 
   copy: (source, destination, clobber) ->
     options = { clobber: false }
@@ -68,12 +76,26 @@ exports.file = {
   rename: (source, destination) ->
     fs.renameSync source, destination
 
+
+  # Folder ops
+
+  isFolder: (filePath)->
+    if @exists(filePath)
+      stats = fs.statSync(filePath)
+      if stats.isDirectory()
+        return true
+      else
+        return false
+    else
+      return false
+
+  newFolder: (folderName)->
+    fs.mkdirsSync(folderName)
+
+
   traverse: (directoryPath, callback)->
     fyle.walkSync directoryPath, callback
 
-  
-  del: (filePath)->
-    fs.removeSync filePath
 
   setupFolderTree: (subfolders) ->
     subfolders.each (subfolderPath)->
@@ -83,20 +105,6 @@ exports.file = {
         else
           logger.info "#{subfolderPath} created."    
 
-  # ## File Path Ops
-
-  cleanPath: (filePath)->
-    return path.normalize(filePath)
-
-  # validate that the file extension ends with the desired extension, if not, append
-  ensureExtension: (filePath, ext)->
-    if _.endsWith(filePath, ext)
-      return filePath
-    else
-      return "#{filePath}#{ext}"
-
   
-
-
 
 }
