@@ -59,33 +59,47 @@ current = aitutils.configuration.current
 
 ## Data
 
+Handles a variety of data formats.
 
+This is currently Work-In-Progress.
 
+## General
+
+Other miscellaneous functions.
+
+**aitutils.general.dateSid(*format*)**
+
+*returns string*
+
+Returns a numeric formatted date *YYYYMMDDhhmmss*. 
+
+You can override the default format by passing a string as the format parameter. The format should use Moment.js's conventions.
 
 ## Logger
 
+Simple console logger.
 
+Types:
 
-Simple console logger used in Assign It To Us's knodeo products.
+* debug
+* info
+* error
+* warn
+* bot
+* shell
+* exec
+* stub
+* todo
+* sql
 
-Color coding using `chalk`
+**aitutils.logger.*type*("message")**
 
-## Important Note
+*returns nothing*
 
-This library has been deprecated in favor of aitutils (https://github.com/assignittous/aitutils)
-
-# Install
-
-Add it to your project:
-
-`npm install knodeo-logger --save`
-
-
-# Sample Code
+Examples:
 
 ```coffeescript
-
-logger = require('./index').Logger
+logger = require('aitutils').aitutils.logger
 
 logger.debug "This is a debug message"
 
@@ -108,3 +122,4 @@ logger.todo "This is a todo message"
 logger.sql "This is an sql message"
 
 ```
+
