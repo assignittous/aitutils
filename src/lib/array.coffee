@@ -7,17 +7,4 @@ exports.array = {
       return obj[0] instanceof Object
     else
       return false
-
-  # todo: not complete
-  toCsv: (arr, attributes)->
-    that = @
-    targetRecords = @csvHeader(attributes || _.first(arr))  + '\n'
-    _.each arr, (o)->
-      if attributes?
-        targetRecords += {}
-      else
-        targetRecords += that.csvRowSanitize(o, attributes) + "\n"
-    return targetRecords
-
-
 }
