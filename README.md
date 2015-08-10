@@ -63,6 +63,100 @@ Handles a variety of data formats.
 
 This is currently Work-In-Progress.
 
+## File
+
+**Synchronous** file tools.
+
+**aitutils.file.cleanPath(filePath)**
+
+*returns string*
+
+Cleans up a file path by removing extra slashes, etc.
+
+**aitutils.file.ensureExtension(filePath, ext)**
+
+*returns string*
+
+Ensures that the *filePath* has *ext*, if not, it is added to it. The extension should have a period in it.
+
+```coffeescript
+console.log aitutils.file.ensureExtension("somefile.txt",".xls")
+
+# somefile.txt.xls
+```
+
+**aitutils.file.open(file)**
+
+*returns string*
+
+Opens a file.
+
+**aitutils.file.save(file,data)**
+
+*returns nothing*
+
+Saves data to a file.
+
+**aitutils.file.append(file, data)**
+
+*returns nothing* 
+
+Adds data to an existing file
+
+
+**aitutils.file.del(file)**
+
+*returns nothing* 
+
+Deletes a file.
+
+
+**aitutils.file.exists(file)**
+
+*returns boolean* 
+
+Checks if a file/folder exists.
+
+
+**aitutils.file.copy(source, destination, *clobber*)**
+
+*returns nothing* 
+
+Copies a file from one place to another. If clobber is provided and true, overwrites file.
+
+**aitutils.file.move(source, destination, *clobber*)**
+
+*returns nothing* 
+
+Moves a file from one place to another. If clobber is provided and true, overwrites file.
+
+
+**aitutils.file.isFolder(path)**
+
+*returns boolean* 
+
+Checks if a path is a folder.
+
+
+**aitutils.file.newFolder(path)**
+
+*returns nothing* 
+
+Creates a new folder.
+
+**aitutils.file.traverse(path, callback)**
+
+*returns boolean* 
+
+Walks a folder's structure and performs a callback on each item.
+
+**aitutils.file.setupFolderTree(subfolders)**
+
+*returns boolean* 
+
+Passed an array of paths, the function creates all folders in the array.
+
+
 ## General
 
 Other miscellaneous functions.
