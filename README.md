@@ -99,27 +99,69 @@ Types:
 Examples:
 
 ```coffeescript
-logger = require('aitutils').aitutils.logger
+aitutils = require('aitutils').aitutils
 
-logger.debug "This is a debug message"
+aitutils.logger.debug "This is a debug message"
 
-logger.info "This is an info message"
+aitutils.logger.info "This is an info message"
 
-logger.error "This is an error message"
+aitutils.logger.error "This is an error message"
 
-logger.warn "This is a warn message"
+aitutils.logger.warn "This is a warn message"
 
-logger.bot "This is a bot message"
+aitutils.logger.bot "This is a bot message"
 
-logger.shell "This is a shell message"
+aitutils.logger.shell "This is a shell message"
 
-logger.exec "This is an exec message"
+aitutils.logger.exec "This is an exec message"
 
-logger.stub "This is a stub message"
+aitutils.logger.stub "This is a stub message"
 
-logger.todo "This is a todo message"
+aitutils.logger.todo "This is a todo message"
 
-logger.sql "This is an sql message"
+aitutils.logger.sql "This is an sql message"
 
 ```
 
+## Parse
+
+This library is a work in progress.
+
+## XML
+
+**aitutils.xml.tidy(xml)**
+
+*returns string*
+
+Tidies up XML.
+
+**aitutils.xml.reduce(obj)**
+
+*returns object*
+
+Reduces an xmlLite object into something usable.
+
+**aitutils.xml.fromJadeFile(jadepath,locals)**
+
+*returns string*
+
+Compiles a jade file into xml.
+
+**aitutils.xml.fromJade(jadeMarkup,locals)**
+
+*returns string*
+
+Compiles a jade string into xml.
+
+**aitutils.xml.toJadeFile(xml, path)**
+
+*returns nothing*
+
+Converts XML markup into a Jade file.
+
+
+**aitutils.xml.toJade(xml)**
+
+*returns string*
+
+Converts XML markup into Jade markup.
