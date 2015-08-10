@@ -1,6 +1,39 @@
-# README
+# Assign It To Us Utilities (aitutils)
 
-Readme info goes here
+This library contains common utilities used in Assign It To Us projects and products.
+
+
+# Library
+
+The library covers 8 general areas
+
+1. Array
+2. Configuration
+3. Data
+4. File
+5. General
+6. Logging
+7. Parsing
+8. XML
+
+
+# To Install
+
+To add this library to your project:
+
+`npm install aitutils --save`
+
+## To use it
+
+aitutils = require("aitutils").aitutils
+
+# API
+
+## Array
+
+*aitutils.array.isArrayOfObjects(object)*
+**returns boolean**
+
 
 
 
