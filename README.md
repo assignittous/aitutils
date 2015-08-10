@@ -31,13 +31,38 @@ aitutils = require("aitutils").aitutils
 
 ## Array
 
-*aitutils.array.isArrayOfObjects(object)*
-**returns boolean**
+**aitutils.array.isArrayOfObjects(object)**
+
+*returns boolean*
+
+Check if an array is an array of objects.
+
+## Configuration
+
+Loads a CSON configuration file and returns it as an object.
+
+```coffeescript
+
+aitutils = require("aitutils").aitutils
+
+config = aitutils.configuration.load("path/to/config.cson")
+
+# you can also access the config again using the current property
+current = aitutils.configuration.current
+
+```
+
+
+**aitutils.configuration.load(path)**
+
+*returns object*
+
+## Data
 
 
 
 
-# Logger
+## Logger
 
 
 
