@@ -8,6 +8,7 @@ exports.array = {
     else
       return false
 
+  # todo: not complete
   toCsv: (arr, attributes)->
     that = @
     targetRecords = @csvHeader(attributes || _.first(arr))  + '\n'

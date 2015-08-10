@@ -11,6 +11,7 @@ exports.configuration =
 
   load: (path)->
     @current = CSON.parseCSONFile(path)
+    return @current
 
   reset: ()->
     @current = {}
