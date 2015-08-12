@@ -36,5 +36,13 @@ exports.logger = {
   sql: (msg)->
     @append chalk.bgMagenta.black(" SQL "), ""  
     console.log msg
+  custom: (msg, options)->
+    type = options.type.toUpperCase() || "LOG"
+    background = options.background
+    foreground = options.foreground || "black"
+    # todo: add value checks for background and foreground
+    # todo: force capitalization of 1st letter of background
+    @append chalk["bg#{background}"][foreground.toLowerCase()](" #{type} "), msg
+
 
 }.init()
