@@ -14,6 +14,10 @@ exports.logger = {
     entry = "[#{moment().format('HH:mm:ss.SSS')}] #{type} #{msg}"
     @log.push chalk.stripColor(entry)
     console.log entry
+  pass: (msg)->
+    @append chalk.bgGreen.black(" PASS "), msg
+  fail: (msg)->
+    @append chalk.bgRed.black(" ERROR "), msg
   debug: (msg)->
     @append chalk.bgWhite.black(" DEBUG "), msg    
   info: (msg)->
