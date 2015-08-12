@@ -23,7 +23,7 @@ testStrings.each (testString)->
   
   logger.info testString.text
 
-  relativeDates = parse.relativeDate(testString.text)
+  relativeDates = parse.relativeDates(testString.text)
 
   if compare(testString.relativeDates, relativeDates)
     logger.pass "Relative Dates"
@@ -32,6 +32,18 @@ testStrings.each (testString)->
   console.log "Expected: [#{testString.relativeDates.join(',')}]"
   console.log "Got: [#{relativeDates.join(',')}]"
 
+  years = parse.years(testString.text)
+  console.log years
+  console.log testString.years
+  if compare(testString.years, years)
+    logger.pass "Years"
+  else
+    logger.fail "Years"
+  console.log "Expected: [#{testString.years.join(',')}]"
+  console.log "Got: [#{years.join(',')}]"
+
+
+  console.log parse.shortDates(testString.text)
 
   #console.log testString
   
