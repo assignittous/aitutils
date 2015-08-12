@@ -15,8 +15,8 @@ plumber = require "gulp-plumber"
 inject = require "gulp-inject-string"
 
 
-binPath = ["./src/cli.coffee"]
-watchPath = ["./src/cli.coffee"]
+binPath = ["./src/cli.coffee","./src/test.coffee"]
+watchPath = ["./src/cli.coffee","./src/test.coffee"]
 targetPath = "./"
 
 module.exports = ()->

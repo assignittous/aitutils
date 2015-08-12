@@ -10,9 +10,9 @@ taskMasterOptions =
 gulp = require('gulp-task-master')(taskMasterOptions)
 
 
-gulp.task "watch",  ['compile-lib.watch','compile-bin.watch']
-gulp.task "bot", ['compile-lib.watch','compile-bin.watch']
+gulp.task "watch",  ['compile-lib.watch','compile-bin.watch','compile-test.watch']
+gulp.task "bot", ['compile-lib.watch','compile-bin.watch','compile-test.watch']
 
 
 
-gulp.task "default", ['compile-lib','compile-bin']
+gulp.task "default", ['compile-lib','compile-bin','compile-test']
