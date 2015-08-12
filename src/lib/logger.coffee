@@ -17,7 +17,7 @@ exports.logger = {
   pass: (msg)->
     @append chalk.bgGreen.black(" PASS "), msg
   fail: (msg)->
-    @append chalk.bgRed.black(" ERROR "), msg
+    @append chalk.bgRed.black(" FAIL "), msg
   debug: (msg)->
     @append chalk.bgWhite.black(" DEBUG "), msg    
   info: (msg)->
