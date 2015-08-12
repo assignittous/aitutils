@@ -1,0 +1,93 @@
+[
+  {
+    text: "send me this year's income statement"
+    relativeDates: ["this year"]
+    entity: "income statement"
+  }
+  {
+    text: "give me last quarter's income statement"  
+    relativeDates: ["last quarter"]
+    entity: "income statement"
+  }
+  {
+    text: "tell me the income statement for last year"  
+    entity: "income statement"
+    relativeDates: ["last year"]
+  }
+      {
+    text: "show me the income statement for last month"  
+    entity: "income statement"
+    relativeDates: ["last month"]
+  }
+  {
+    text: "send me last week's status report"  
+    entity: "status report"
+    relativeDates: ["last quarter"]
+  }
+  {
+    text: "give me last quarter's income statement"  
+    entity: "income statement"
+    relativeDates: ["last quarter"]
+  }    
+  {
+    text: "last month's income statement"
+    entity: "income statement"
+    relativeDates: ["last quarter"]
+  }    
+
+
+
+  {
+    text: "what were sales for the month of july"
+    relativeDates: ["this year"]
+    entity: "income statement"
+  }
+  {
+    text: "what were sales for 07/2015"
+    relativeDates: ["last quarter"]
+    entity: "income statement"
+  }
+  {
+    text: "how many cars were sold in july"
+    entity: "income statement"
+    relativeDates: ["last year"]
+  }
+      {
+    text: "how many tires were sold in july, 2014"
+    entity: "income statement"
+    relativeDates: ["last month"]
+  }
+  {
+    text: "how many tires were sold last july"
+    entity: "status report"
+    relativeDates: ["last quarter"]
+  }
+
+
+
+  {
+    text: "tires sold in july 2014"
+    relativeDates: ["last quarter"]
+    entity: "income statement"
+  }
+  {
+    text: "Send me yesterday's sales report"
+    entity: "income statement"
+    relativeDates: ["last year"]
+  }
+  {
+    text: "What were last quarter's sales for widgets"
+    entity: "income statement"
+    relativeDates: ["last month"]
+  }
+  {
+    text: "I need today's dashboard" 
+    entity: "status report"
+    relativeDates: ["last quarter"]
+  }
+
+
+
+ 
+   
+]  
