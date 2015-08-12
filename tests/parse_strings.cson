@@ -14,7 +14,7 @@
     entity: "income statement"
     relativeDates: ["last year"]
   }
-      {
+  {
     text: "show me the income statement for last month"  
     entity: "income statement"
     relativeDates: ["last month"]
@@ -22,7 +22,7 @@
   {
     text: "send me last week's status report"  
     entity: "status report"
-    relativeDates: ["last quarter"]
+    relativeDates: ["last week"]
   }
   {
     text: "give me last quarter's income statement"  
@@ -32,58 +32,58 @@
   {
     text: "last month's income statement"
     entity: "income statement"
-    relativeDates: ["last quarter"]
+    relativeDates: ["last month"]
   }    
 
 
 
   {
     text: "what were sales for the month of july"
-    relativeDates: ["this year"]
+    relativeDates: []
     entity: "income statement"
   }
   {
     text: "what were sales for 07/2015"
-    relativeDates: ["last quarter"]
+    relativeDates: []
     entity: "income statement"
   }
   {
     text: "how many cars were sold in july"
     entity: "income statement"
-    relativeDates: ["last year"]
+    relativeDates: []
   }
-      {
+  {
     text: "how many tires were sold in july, 2014"
     entity: "income statement"
-    relativeDates: ["last month"]
+    relativeDates: []
   }
   {
     text: "how many tires were sold last july"
     entity: "status report"
-    relativeDates: ["last quarter"]
+    relativeDates: ["last july"]
   }
 
 
 
   {
     text: "tires sold in july 2014"
-    relativeDates: ["last quarter"]
+    relativeDates: []
     entity: "income statement"
   }
   {
     text: "Send me yesterday's sales report"
-    entity: "income statement"
-    relativeDates: ["last year"]
+    entity: "sales report"
+    relativeDates: ["yesterday"]
   }
   {
     text: "What were last quarter's sales for widgets"
-    entity: "income statement"
-    relativeDates: ["last month"]
+    entity: "sales"
+    relativeDates: ["last quarter"]
   }
   {
     text: "I need today's dashboard" 
-    entity: "status report"
-    relativeDates: ["last quarter"]
+    entity: "dashboard"
+    relativeDates: ["today"]
   }
 
 
