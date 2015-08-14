@@ -35,7 +35,7 @@ exports.parse = {
   # beginning of quarter, end of quarter
 
 
-  quarterAbbrevation: (text)->
+  quarterAbbreviation: (text)->
     # (q[1-4]|quarter)
 
     return text.match(/(q[1-4])/gi) || []  
@@ -46,7 +46,7 @@ exports.parse = {
 
 
   # other
-  
+
   stub: (text)->
     return text.match(/a/gi) || []  
 
